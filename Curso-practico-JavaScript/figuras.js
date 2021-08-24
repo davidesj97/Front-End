@@ -80,3 +80,17 @@ function calcularAreaTriangulo() {
     const area = areaTriangulo(base, altura);
     alert("El área del triángulo es: " + area);
 }
+
+function calcularCircunferenciaCirculo() {
+    const radio = Number(document.getElementById("radioCirculo").value);
+
+    const circunferencia = circunferenciaCirculo(radio);
+    alert("La circunferencia del circulo es: " + circunferencia);
+}
+
+function calcularAreaCirculo() {
+    const radio = Number(document.getElementById("radioCirculo").value);
+
+    const area = areaCirculo(radio);
+    alert("El área del circulo es: " + area);
+}
