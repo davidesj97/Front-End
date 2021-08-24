@@ -1,2 +1,2 @@
 # Front-End
-Repositorio para guardar mis practicas del las ruta de front-end.
+Repositorio para guardar mis practicas del la ruta de front-end.
