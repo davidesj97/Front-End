@@ -21,6 +21,16 @@ function areaTriangulo(base, altura) {
     return (base * altura) / 2;
 }
 
+function alturaTrianguloIsoseles(lado1, lado2, base) {
+    if (lado1 == lado2) {
+        base = base / 2;
+        const altura = Math.sqrt((lado1 ** 2) - (base ** 2));
+        return "La altura es: " + altura;
+    } else {
+        return "No es un triángulo isósceles"
+    }
+}
+
 console.groupEnd();
 
 //Código del circulo
@@ -79,6 +89,15 @@ function calcularAreaTriangulo() {
 
     const area = areaTriangulo(base, altura);
     document.getElementById("pantalla").value = "El área del triángulo es: " + area;
+}
+
+function calcularAlturaIsosceles() {
+    const lado1 = document.getElementById("lado1Isosceles").value;
+    const lado2 = document.getElementById("lado2Isosceles").value;
+    const base = document.getElementById("baseIsosceles").value;
+
+    const altura = alturaTrianguloIsoseles(lado1, lado2, base);
+    document.getElementById("pantalla").value = altura;
 }
 
 function calcularCircunferenciaCirculo() {
