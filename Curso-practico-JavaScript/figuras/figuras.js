@@ -54,14 +54,14 @@ function calcularPerimetroCuadrado() {
     const lado = document.getElementById("inputCuadrado").value;
 
     const perimetro = perimetroCuadrado(lado);
-    alert("El perímetro del cuadrado es: " + perimetro);
+    document.getElementById("pantalla").value = "El perímetro del cuadrado es: " + perimetro;
 }
 
 function calcularAreaCuadrado() {
     const lado = document.getElementById("inputCuadrado").value;
 
     const area = areaCuadrado(lado);
-    alert("El área del cuadrado es: " + area);
+    document.getElementById("pantalla").value = "El área del cuadrado es: " + area;
 }
 
 function calcularPerimetroTriangulo() {
@@ -70,7 +70,7 @@ function calcularPerimetroTriangulo() {
     const base = Number(document.getElementById("baseTriangulo").value);
 
     const perimetro = perimetroTriangulo(lado1, lado2, base);
-    alert("El perímetro del triangulo es: " + perimetro);
+    document.getElementById("pantalla").value = "El perímetro del triángulo es: " + perimetro;
 }
 
 function calcularAreaTriangulo() {
@@ -78,19 +78,23 @@ function calcularAreaTriangulo() {
     const altura = Number(document.getElementById("alturaTriangulo").value);
 
     const area = areaTriangulo(base, altura);
-    alert("El área del triángulo es: " + area);
+    document.getElementById("pantalla").value = "El área del triángulo es: " + area;
 }
 
 function calcularCircunferenciaCirculo() {
     const radio = Number(document.getElementById("radioCirculo").value);
 
     const circunferencia = circunferenciaCirculo(radio);
-    alert("La circunferencia del circulo es: " + circunferencia);
+    document.getElementById("pantalla").value = "La circunferencia del circulo es: " + circunferencia;
 }
 
 function calcularAreaCirculo() {
     const radio = Number(document.getElementById("radioCirculo").value);
 
     const area = areaCirculo(radio);
-    alert("El área del circulo es: " + area);
+    document.getElementById("pantalla").value = "El área del circulo es: " + area;
+}
+
+function borrarPantalla() {
+    document.getElementById("pantalla").value = "";
 }
