@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #005F6B;
+}
+
+.contenido {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: 5% 15% 75% 5%;
+}
+
+.cabecera {
+    background-color: #343838;
+    color: #fff;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+}
+
+.cabecera h1 {
+    font-size: 35px;
+    margin: 10px
+}
+
+.cabecera p {
+    font-size: 20px;
+}
+
+.moda {
+    background-color: #008C9E;
+    margin-top: 10px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.moda form {
+    background-color: #00DFFC;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.moda form label {
+    font-size: 22px;
+    margin: 5px 0;
+}
+
+.moda form input {
+    width: 60%;
+    height: 30px;
+    font-size: 18px;
+    margin: 5px 0;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.moda form button {
+    width: 50%;
+    height: 40px;
+    font-size: 18px;
+    margin: 5px auto;
+}
