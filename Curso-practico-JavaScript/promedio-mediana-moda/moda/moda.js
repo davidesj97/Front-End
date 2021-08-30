@@ -1,3 +1,11 @@
+function limpiarLista(cadena) {
+    let lista = cadena.split(" ");
+    const listaNumeros = lista.map(function(numero) {
+        return parseInt(numero);
+    });
+    return listaNumeros;
+}
+
 function calcularModa(lista) {
     const contarLista = {};
     lista.map(
@@ -16,5 +24,12 @@ function calcularModa(lista) {
     );
 
     const moda = listaOrdenada[listaOrdenada.length - 1];
-    return moda;
+    return moda[0];
+}
+
+function obtenerModa() {
+    const lista = document.getElementById("listaModa").value;
+
+    const moda = calcularModa(limpiarLista(lista));
+    document.getElementById("inputModa").value = moda;
 }
