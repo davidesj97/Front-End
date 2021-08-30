@@ -1,3 +1,11 @@
+function limpiarLista(cadena) {
+    let lista = cadena.split(" ");
+    const listaNumeros = lista.map(function(numero) {
+        return parseInt(numero);
+    });
+    return listaNumeros;
+}
+
 function calcularPromedio(lista) {
     const sumaLista = lista.reduce(
         function(valorAcumulado = 0, nuevoElemento) {
@@ -18,8 +26,9 @@ function esPar(numero) {
 
 function calcularMediana(lista) {
     lista.sort((a, b) => a - b);
-    const mitadLista = Math.floor(lista.length / 2);
+    const mitadLista = parseInt(lista.length / 2);
     let mediana;
+    document.getElementById("listaOrdenada").value = lista;
 
     if (esPar(lista.length)) {
         const elemento1 = lista[mitadLista - 1];
@@ -31,4 +40,13 @@ function calcularMediana(lista) {
     }
 
     return mediana;
+}
+
+function obtenerMediana() {
+    const lista = document.getElementById("listaMediana").value;
+
+
+
+    const mediana = calcularMediana(limpiarLista(lista));
+    document.getElementById("inputMediana").value = mediana;
 }
