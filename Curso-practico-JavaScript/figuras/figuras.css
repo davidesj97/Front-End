@@ -59,6 +59,10 @@ input[type=number] {
     align-self: center;
 }
 
+.activarFigura {
+    display: none;
+}
+
 .limpiarPantalla {
     grid-column: 4/5;
     grid-row: 1/2;
@@ -126,4 +130,82 @@ input[type=number] {
     width: 60%;
     height: 25px;
     margin: 3px auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .contenido {
+        background-color: #EFEFEF;
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        grid-template-rows: 18% 82%;
+    }
+    .cabecera h1 {
+        font-size: 20px;
+    }
+    .cabecera p {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    .contenedor {
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 8% 77%;
+    }
+    #pantalla {
+        width: 90%;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 auto;
+        grid-column: 1;
+        grid-row: 1/2;
+        align-self: center;
+    }
+    .activarFigura {
+        grid-column: 1;
+        grid-row: 2/3;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .activarFigura>button {
+        width: 20%;
+    }
+    .limpiarPantalla {
+        display: none;
+    }
+    .cuadrado {
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .triangulo {
+        display: none;
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .circulo {
+        display: none;
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .trianguloIsoceles {
+        display: none;
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .figuras {
+        height: 80%;
+        margin: 25px auto 0;
+    }
+    .figuras h2 {
+        margin-top: 20px;
+    }
+    .figuras input {
+        font-size: 18px;
+        height: 25px;
+        margin: 10px auto;
+    }
+    .figuras button {
+        width: 70%;
+        height: 30px;
+        margin: 10px auto;
+    }
 }
