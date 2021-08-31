@@ -132,11 +132,34 @@ input[type=number] {
     margin: 3px auto;
 }
 
+@media only screen and (max-width: 992px) {
+    .contenido {
+        width: 100%;
+        height: 40rem;
+        min-height: 100vh;
+        margin: 0;
+        grid-template-rows: 15% 85%;
+    }
+    .contenedor {
+        grid-template-rows: 18% 39% 39%;
+    }
+    #pantalla {
+        width: 90%;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 auto;
+        grid-column: 2/4;
+        grid-row: 1/2;
+        align-self: center;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .contenido {
         background-color: #EFEFEF;
         width: 100%;
-        height: 100vh;
+        height: 40rem;
+        min-height: 100vh;
         margin: 0 auto;
         grid-template-rows: 18% 82%;
     }
