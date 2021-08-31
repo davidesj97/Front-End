@@ -24,7 +24,14 @@
             <input id="pantalla" type="text" readonly>
             <button class="limpiarPantalla" onclick="borrarPantalla()">Limpiar pantalla</button>
 
-            <section class="cuadrado figuras">
+            <div class="activarFigura">
+                <button type="button" onclick="activarCuadrado()">Cuadrado</button>
+                <button type="button" onclick="activarTriangulo()">Triángulo</button>
+                <button type="button" onclick="activarCirculo()">Circulo</button>
+                <button type="button" onclick="activarIsosceles()">Triángulo isósceles</button>
+            </div>
+
+            <section id="cuadrado" class="cuadrado figuras">
                 <h2>Calcula el área y perímetro de un cuadrado</h2>
                 <form>
                     <label for="inputCuadrado">Escribe cuánto mide cada lado de tu cuadrado</label>
@@ -34,7 +41,7 @@
                 </form>
             </section>
 
-            <section class="triangulo figuras">
+            <section id="triangulo" class="triangulo figuras">
                 <h2>Calcula el área y perímetro de un triángulo</h2>
                 <form>
                     <label>Escribe cuánto mide cada lado de tu triángulo y su altura</label>
@@ -49,7 +56,7 @@
                 </form>
             </section>
 
-            <section class="circulo figuras">
+            <section id="circulo" class="circulo figuras">
                 <h2>Calcula el área y la circunferencia de un circulo</h2>
                 <form>
                     <label for="radioCirculo">Escribe cuánto mide el radio del circulo</label>
@@ -59,7 +66,7 @@
                 </form>
             </section>
 
-            <section class="trianguloIsoceles triangulo figuras">
+            <section id="trianguloIsoceles" class="trianguloIsoceles triangulo figuras">
                 <h2>Calcula la altura de un triangulo isósceles</h2>
                 <form>
                     <label>Escribe cuánto mide cada lado de tu triángulo y su altura</label>

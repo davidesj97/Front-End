@@ -117,3 +117,32 @@ function calcularAreaCirculo() {
 function borrarPantalla() {
     document.getElementById("pantalla").value = "";
 }
+
+function activarCuadrado() {
+
+    document.getElementById("cuadrado").style.display = "block";
+    document.getElementById("triangulo").style.display = "none";
+    document.getElementById("circulo").style.display = "none";
+    document.getElementById("trianguloIsoceles").style.display = "none";
+}
+
+function activarTriangulo() {
+    document.getElementById("triangulo").style.display = "block";
+    document.getElementById("cuadrado").style.display = "none";
+    document.getElementById("circulo").style.display = "none";
+    document.getElementById("trianguloIsoceles").style.display = "none";
+}
+
+function activarCirculo() {
+    document.getElementById("circulo").style.display = "block";
+    document.getElementById("cuadrado").style.display = "none";
+    document.getElementById("triangulo").style.display = "none";
+    document.getElementById("trianguloIsoceles").style.display = "none";
+}
+
+function activarIsosceles() {
+    document.getElementById("trianguloIsoceles").style.display = "block";
+    document.getElementById("cuadrado").style.display = "none";
+    document.getElementById("triangulo").style.display = "none";
+    document.getElementById("circulo").style.display = "none";
+}
