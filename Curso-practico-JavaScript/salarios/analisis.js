@@ -30,30 +30,40 @@ function medianaSalarios(lista) {
 }
 
 //Mediana general
-const salariosMex = mexico.map(
-    function(persona) {
-        return persona.salario;
-    }
-);
+function obtenerSalarios(lista) {
+    const salarios = lista.map(
+        function(persona) {
+            return persona.salario;
+        }
+    );
+    return salarios;
+}
 
-const salariosMexOrdenados = salariosMex.sort(
-    function(salarioA, salarioB) {
-        return salarioA - salarioB;
-    }
-);
+function ordenarSalarios(lista) {
+    const salariosOrdenados = lista.sort(
+        function(salarioA, salarioB) {
+            return salarioA - salarioB;
+        }
+    );
+    return salariosOrdenados;
+}
 
-const medianaGeneralMex = medianaSalarios(salariosMexOrdenados);
+function obtenerMedianaSalarios() {
+    const salarios = obtenerSalarios(mexico);
+    const salariosOrdenados = ordenarSalarios(salarios)
+    const medianaGeneral = medianaSalarios(salariosOrdenados);
 
-//Mediana del Top 10%
-const comienzo = (salariosMexOrdenados.length * 90) / 100;
-const contador = salariosMexOrdenados.length - comienzo;
+    document.getElementById("inputMediana").value = medianaGeneral;
+}
 
-const salariosMexTop10 = salariosMexOrdenados.splice(comienzo, contador);
+function obtenerTop10() {
+    const salarios = obtenerSalarios(mexico);
+    const salariosOrdenados = ordenarSalarios(salarios)
+    const comienzo = Math.floor((salariosOrdenados.length * 90) / 100);
+    const contador = salariosOrdenados.length - comienzo;
 
-const medianaTop10Mex = medianaSalarios(salariosMexTop10);
+    const salariosTop10 = salariosOrdenados.splice(comienzo, contador);
 
-console.log(salariosMex);
-console.log(
-    medianaGeneralMex,
-    medianaTop10Mex
-);
+    const medianaTop10 = medianaSalarios(salariosTop10);
+    document.getElementById("inputTop10").value = medianaTop10;
+}
