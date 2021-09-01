@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="salarios.css">
     <title>Salarios</title>
 </head>
 
 <body>
-    <h1>Salarios</h1>
+    <div class="titulo">
+        <h1>Salarios</h1>
+        <p>Calcular cual es la mediana y el top 10% de una lista de salarios ingresados </p>
+    </div>
+
+    <div class="contenedor">
+        <form class="formulario">
+            <p class="informacion">Ingrese el nombre y salario de una persona.</p>
+            <label class="etiqueta">Nombre:</label>
+            <input id="inputNombre" class="input" type="text">
+            <label class="etiqueta">Salario:</label>
+            <input id="inputSalario" class="input" type="number" />
+            <button class="boton" type="button" onclick="guardarSalario()">Guardar salario</button>
+        </form>
+        <div class="medianaSalarios">
+            <label class="etiqueta">Mediana de los salario:</label>
+            <input id="inputMediana" class="input" type="number" readonly />
+            <button class="boton" type="button" onclick="obtenerMedianaSalarios()">Calcular mediana</button>
+        </div>
+        <div class="top10Salarios">
+            <label class="etiqueta">Top 10% de los salarios:</label>
+            <input id="inputTop10" class="input" type="number" readonly />
+            <button class="boton" type="button" onclick="obtenerTop10()">Calcular top 10%</button>
+        </div>
+        <div class="listaSalarios">
+            <label class="etiqueta">Lista de los salario:</label>
+            <textarea id="areaLista" cols="30" rows="30" readonly></textarea>
+        </div>
+    </div>
 
     <script src="salarios.js"></script>
     <script src="analisis.js"></script>
