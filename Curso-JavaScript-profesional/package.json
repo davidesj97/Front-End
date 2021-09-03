@@ -1,0 +1,17 @@
+{
+    "name": "Curso-JavaScript-profesional",
+    "version": "1.0.0",
+    "description": "Proyecto del curso profesional de JavaScript",
+    "main": "",
+    "scripts": {
+        "start": "live-server --port=8080 --browser=firefox"
+    },
+    "keywords": [
+        "platzi"
+    ],
+    "author": "David Eduardo Sánchez De Jesús",
+    "license": "ISC",
+    "devDependencies": {
+        "live-server": "^1.2.1"
+    }
+}
