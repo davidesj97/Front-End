@@ -4,7 +4,7 @@
     "description": "Proyecto del curso profesional de JavaScript",
     "main": "",
     "scripts": {
-        "start": "live-server"
+        "start": "live-server --port=8080 --browser=firefox"
     },
     "keywords": [
         "platzi"
