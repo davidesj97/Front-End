@@ -13,3 +13,9 @@ play_pause.onclick = () => player.togglePlay();
 
 const mute_unmute = document.getElementById("muteUnmute");
 mute_unmute.onclick = () => player.toggleMute();
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(error => {
+        console.log(error.message);
+    })
+}
