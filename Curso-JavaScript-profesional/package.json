@@ -4,7 +4,7 @@
     "description": "Proyecto del curso profesional de JavaScript",
     "main": "",
     "scripts": {
-        "start": "live-server"
+        "start": "parcel index.html ejercicos/ejercicios.html ejercicios/**/*.html"
     },
     "keywords": [
         "platzi"
@@ -12,6 +12,11 @@
     "author": "David Eduardo Sánchez De Jesús",
     "license": "ISC",
     "devDependencies": {
-        "live-server": "^1.2.1"
-    }
+        "live-server": "^1.2.1",
+        "parcel-bundler": "^1.12.5",
+        "typescript": "^4.4.2"
+    },
+    "browserslist": [
+        "last 1 Chrome version"
+    ]
 }
