@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.contenido {
+    background-color: #EFEFEF;
+    width: 80%;
+    height: calc(100vh - 40px);
+    margin: 20px auto;
+    display: grid;
+    grid-template-rows: 15% 85%;
+}
+
+.cabecera {
+    background-color: #0F4C75;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    font-family: 'Kanit', sans-serif;
+}
+
+.cabecera h1 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cabecera p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.contenedor {
+    background-color: #1B262C;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20% 40% 40%;
+}
+
+#pantalla {
+    width: 90%;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.activarFigura {
+    display: none;
+}
+
+.limpiarPantalla {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    width: 50%;
+    height: 30%;
+    align-self: center;
+}
+
+.cuadrado {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.triangulo {
+    grid-column: 3/5;
+    grid-row: 2/3;
+}
+
+.triangulo form .inputs {
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.triangulo form .inputs input {
+    width: 20%;
+}
+
+.circulo {
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+.trianguloIsoceles {
+    grid-column: 3/5;
+    grid-row: 3/4;
+}
+
+.figuras {
+    background-color: #BBE1FA;
+    color: #1B262C;
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.figuras h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.figuras form {
+    width: 90%;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.figuras input {
+    margin: 5px auto;
+}
+
+.figuras button {
+    width: 60%;
+    height: 25px;
+    margin: 3px auto;
+}
+
+@media only screen and (max-width: 992px) {
+    .contenido {
+        width: 100%;
+        height: 40rem;
+        min-height: 100vh;
+        margin: 0;
+        grid-template-rows: 15% 85%;
+    }
+    .contenedor {
+        grid-template-rows: 18% 39% 39%;
+    }
+    #pantalla {
+        width: 90%;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 auto;
+        grid-column: 2/4;
+        grid-row: 1/2;
+        align-self: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contenido {
+        background-color: #EFEFEF;
+        width: 100%;
+        height: 40rem;
+        min-height: 100vh;
+        margin: 0 auto;
+        grid-template-rows: 18% 82%;
+    }
+    .cabecera h1 {
+        font-size: 20px;
+    }
+    .cabecera p {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    .contenedor {
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 8% 77%;
+    }
+    #pantalla {
+        width: 90%;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 auto;
+        grid-column: 1;
+        grid-row: 1/2;
+        align-self: center;
+    }
+    .activarFigura {
+        grid-column: 1;
+        grid-row: 2/3;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .activarFigura>button {
+        width: 20%;
+    }
+    .limpiarPantalla {
+        display: none;
+    }
+    .cuadrado {
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .triangulo {
+        display: none;
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .circulo {
+        display: none;
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .trianguloIsoceles {
+        display: none;
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+    .figuras {
+        height: 80%;
+        margin: 25px auto 0;
+    }
+    .figuras h2 {
+        margin-top: 20px;
+    }
+    .figuras input {
+        font-size: 18px;
+        height: 25px;
+        margin: 10px auto;
+    }
+    .figuras button {
+        width: 70%;
+        height: 30px;
+        margin: 10px auto;
+    }
+}

@@ -1,0 +1,89 @@
+/* REGISTRO */
+
+.register {
+    width: 100%;
+    height: 100vh;
+}
+
+.register-form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form .checkbox {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.register-form .checkbox input {
+    margin-right: 15px;
+    height: 12px;
+}
+
+.register-form .checkbox a {
+    color: #00953A;
+}
+
+.register-form button {
+    background-color: #D1D1D1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    width: 200px;
+    font-size: 13px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.register-form button:active {
+    border: 1px solid #000;
+}
+
+@media (min-width: 768px) {
+    /*Registro*/
+    .register {
+        height: 100vh;
+    }
+    .register-form {
+        height: 90%;
+        justify-content: space-evenly;
+    }
+    .register-form .checkbox {
+        font-size: 14px;
+    }
+    .register-form button {
+        width: 70%;
+        height: 6%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .register {
+        width: 40%;
+        height: 470px;
+        margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0 #707070;
+    }
+    .register-form {
+        height: 90%;
+        margin-top: 20px;
+        justify-content: initial;
+    }
+    .register-form .checkbox {
+        color: #5B6670;
+        margin-top: 7px;
+        font-size: 14px;
+    }
+    .input {
+        height: 4%;
+        font-size: 10px;
+    }
+    .register-form button {
+        height: auto;
+        font-size: 16px;
+    }
+}

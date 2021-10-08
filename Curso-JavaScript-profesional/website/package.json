@@ -1,0 +1,24 @@
+{
+    "name": "Curso-JavaScript-profesional",
+    "version": "1.0.0",
+    "description": "Proyecto del curso profesional de JavaScript",
+    "main": "",
+    "scripts": {
+        "start": "parcel index.html ejercicos/ejercicios.html ejercicios/**/*.html"
+    },
+    "keywords": [
+        "platzi"
+    ],
+    "author": "David Eduardo Sánchez De Jesús",
+    "license": "ISC",
+    "devDependencies": {
+        "parcel-bundler": "^1.12.5",
+        "typescript": "^4.4.2"
+    },
+    "browserslist": [
+        "last 1 Chrome version"
+    ],
+    "dependencies": {
+        "@davidesj97/platzi-mediaplayer": "^1.0.0"
+    }
+}

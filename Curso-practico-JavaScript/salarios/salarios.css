@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    ;
+}
+
+.informacion {
+    font-size: 1rem;
+}
+
+.etiqueta {
+    font-size: .9rem;
+    margin: .5rem 0;
+}
+
+.input {
+    width: 80%;
+    margin: 0 auto;
+    font-size: .9rem;
+    height: 1.1rem;
+}
+
+.boton {
+    width: 40%;
+    font-size: .9rem;
+    height: 1.8rem;
+    margin: .6rem auto 0;
+}
+
+.titulo {
+    background-color: black;
+    color: #FFF;
+    width: 85%;
+    height: 6rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor {
+    width: 85%;
+    min-height: calc(100vh - 8rem);
+    margin: 1rem auto 1rem;
+    border-radius: .8rem;
+    box-shadow: 2px 2px 7px 7px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 40% 29% 29%;
+    justify-items: center;
+    align-items: center;
+}
+
+.formulario {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.medianaSalarios {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.top10Salarios {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.listaSalarios {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+}
+
+#areaLista {
+    resize: none;
+    outline: none;
+}

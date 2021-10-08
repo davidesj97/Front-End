@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="figuras.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <title>Figuras geométricas</title>
+</head>
+
+<body>
+
+    <div class="contenido">
+        <header class="cabecera">
+            <h1>Figuras geométricas</h1>
+            <p>Este es el primer taller del curso práctico de JavaScript</p>
+        </header>
+
+        <div class="contenedor">
+            <input id="pantalla" type="text" readonly>
+            <button class="limpiarPantalla" onclick="borrarPantalla()">Limpiar pantalla</button>
+
+            <div class="activarFigura">
+                <button type="button" onclick="activarCuadrado()">Cuadrado</button>
+                <button type="button" onclick="activarTriangulo()">Triángulo</button>
+                <button type="button" onclick="activarCirculo()">Circulo</button>
+                <button type="button" onclick="activarIsosceles()">Triángulo isósceles</button>
+            </div>
+
+            <section id="cuadrado" class="cuadrado figuras">
+                <h2>Calcula el área y perímetro de un cuadrado</h2>
+                <form>
+                    <label for="inputCuadrado">Escribe cuánto mide cada lado de tu cuadrado</label>
+                    <input id="inputCuadrado" type="number" placeholder="Lado">
+                    <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el perímetro</button>
+                    <button type="button" onclick="calcularAreaCuadrado()">Calcular el área</button>
+                </form>
+            </section>
+
+            <section id="triangulo" class="triangulo figuras">
+                <h2>Calcula el área y perímetro de un triángulo</h2>
+                <form>
+                    <label>Escribe cuánto mide cada lado de tu triángulo y su altura</label>
+                    <div class="inputs">
+                        <input id="lado1Triangulo" type="number" placeholder="Lado 1">
+                        <input id="lado2Triangulo" type="number" placeholder="Lado 2">
+                        <input id="baseTriangulo" type="number" placeholder="Base">
+                        <input id="alturaTriangulo" type="number" placeholder="Altura">
+                    </div>
+                    <button type="button" onclick="calcularPerimetroTriangulo()">Calcular el perímetro</button>
+                    <button type="button" onclick="calcularAreaTriangulo()">Calcular el área</button>
+                </form>
+            </section>
+
+            <section id="circulo" class="circulo figuras">
+                <h2>Calcula el área y la circunferencia de un circulo</h2>
+                <form>
+                    <label for="radioCirculo">Escribe cuánto mide el radio del circulo</label>
+                    <input id="radioCirculo" type="number" placeholder="Radio">
+                    <button type="button" onclick="calcularCircunferenciaCirculo()">Calcular el circunferencia</button>
+                    <button type="button" onclick="calcularAreaCirculo()">Calcular el área</button>
+                </form>
+            </section>
+
+            <section id="trianguloIsoceles" class="trianguloIsoceles triangulo figuras">
+                <h2>Calcula la altura de un triangulo isósceles</h2>
+                <form>
+                    <label>Escribe cuánto mide cada lado de tu triángulo y su altura</label>
+                    <div class="inputs">
+                        <input id="lado1Isosceles" type="number" placeholder="Lado 1">
+                        <input id="lado2Isosceles" type="number" placeholder="Lado 2">
+                        <input id="baseIsosceles" type="number" placeholder="Base">
+                    </div>
+                    <button type="button" onclick="calcularAlturaIsosceles()">Calcular Altura</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="figuras.js"></script>
+</body>
+
+</html>
