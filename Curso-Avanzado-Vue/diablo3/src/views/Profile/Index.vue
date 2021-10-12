@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="profile-view">
     <base-loading v-if="isLoading" />
+
     <template v-if="profileData !== null">
-      <h1>Profile View</h1>
       <main-block :profile-data="profileData"/>
+      <artisans-block :artisans-data="artisansData"/>
     </template>
   </div>
 </template>
@@ -13,10 +14,15 @@ import BaseLoading from '@/components/BaseLoading'
 import setError from '@/mixins/setError'
 import { getApiAccount } from '@/api/search'
 import MainBlock from './MainBlock/Index.vue'
+import ArtisansBlock from './ArtisansBlock/Index'
 
 export default {
   name: 'ProfileView',
-  components: { BaseLoading, MainBlock },
+  components: {
+    BaseLoading,
+    MainBlock,
+    ArtisansBlock
+  },
   mixins: [
     setError
   ],
@@ -24,6 +30,18 @@ export default {
     return {
       isLoading: false,
       profileData: null
+    }
+  },
+  computed: {
+    artisansData() {
+      return {
+        blacksmith: this.profileData.blacksmith,
+        blacksmithHardcore: this.profileData.blacksmithHardcore,
+        jeweler: this.profileData.jeweler,
+        jewelerHardcore: this.profileData.jewelerHardcore,
+        mystic: this.profileData.mystic,
+        mysticHardcore: this.profileData.mysticHardcore
+      }
     }
   },
   created() {
