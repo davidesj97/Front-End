@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Info Principal</h1>
+    <h3>Servicios de reparación de celulares</h3>
   </div>
 </template>
 

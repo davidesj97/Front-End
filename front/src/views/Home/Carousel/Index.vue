@@ -9,15 +9,19 @@
     img-height="480"
   >
     <b-carousel-slide
-      caption="First slide"
+      caption="Reparacion de celulares"
       img-src="https://picsum.photos/1024/480/?image=10"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Second Slide"
+      caption="Reparación de computadoras"
       img-src="https://picsum.photos/1024/480/?image=12"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Third Slide"
+      caption="Reparación de electrodomésticos"
+      img-src="https://picsum.photos/1024/480/?image=15"
+    ></b-carousel-slide>
+    <b-carousel-slide
+      caption="Venta de accesorios para celulares"
       img-src="https://picsum.photos/1024/480/?image=22"
     ></b-carousel-slide>
   </b-carousel>
