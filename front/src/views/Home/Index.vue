@@ -1,13 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../../assets/logo.png">
+    <carousel />
+    <info-principal />
   </div>
 </template>
 
 <script>
+import Carousel from './Carousel/Index'
+import InfoPrincipal from './InfoPrincipal/Index'
 
 export default {
   name: 'Home',
-  components: {}
+  components: {
+    Carousel,
+    InfoPrincipal
+  }
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div>
     <header-bar />
-    <h1>MainLayout</h1>
     <router-view />
     <footer-bar />
   </div>
