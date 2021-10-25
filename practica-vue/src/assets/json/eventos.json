@@ -1,0 +1,53 @@
+{
+  "is_ok": true,
+  "data": [
+    {
+      "event_id": 1,
+      "venue_id": 36,
+      "folio": "1",
+      "event_name": "Expo Recrea Escuela para la Vida",
+      "event_date": "2021-11-04",
+      "start_date": "2021-10-02",
+      "end_date": "2021-11-03",
+      "general_message": "La dirección de Educación para la vida lleva a cabo la invitación para la participación de los Centros de Trabajo que se encuentren en el programa en Expo Recrea Escuela para la Vida.",
+      "status": "Activo",
+      "venues": "[{\"type\":\"Presencial\",\"onsite_name\":\"Expo Guadalajara\",\"street\":\"Av. Mariano Otero\",\"references\":\"sq. Av. de Las Rosas\",\"suburb\":\"Verde Valle\",\"cp\":\"44550\",\"town\":\"Guadalajara\",\"virtual_platform\":null,\"link\":null}]"
+    },
+    {
+      "event_id": 2,
+      "venue_id": 36,
+      "folio": "2",
+      "event_name": "Expo Recrea Escuela para la Vida",
+      "event_date": "2021-11-04",
+      "start_date": "2021-10-02",
+      "end_date": "2021-11-03",
+      "general_message": "La dirección de Educación para la vida lleva a cabo la invitación para la participación de los Centros de Trabajo que se encuentren en el programa en Expo Recrea Escuela para la Vida.",
+      "status": "Activo",
+      "venues": "[{\"type\":\"Presencial\",\"onsite_name\":\"Expo Guadalajara\",\"street\":\"Av. Mariano Otero\",\"references\":\"sq. Av. de Las Rosas\",\"suburb\":\"Verde Valle\",\"cp\":\"44550\",\"town\":\"Guadalajara\",\"virtual_platform\":null,\"link\":null}]"
+    },
+    {
+      "event_id": 3,
+      "venue_id": 36,
+      "folio": "3",
+      "event_name": "Expo Recrea Escuela para la Vida",
+      "event_date": "2021-11-04",
+      "start_date": "2021-10-02",
+      "end_date": "2021-11-03",
+      "general_message": "La dirección de Educación para la vida lleva a cabo la invitación para la participación de los Centros de Trabajo que se encuentren en el programa en Expo Recrea Escuela para la Vida.",
+      "status": "Activo",
+      "venues": "[{\"type\":\"Presencial\",\"onsite_name\":\"Expo Guadalajara\",\"street\":\"Av. Mariano Otero\",\"references\":\"sq. Av. de Las Rosas\",\"suburb\":\"Verde Valle\",\"cp\":\"44550\",\"town\":\"Guadalajara\",\"virtual_platform\":null,\"link\":null}]"
+    },
+    {
+      "event_id": 4,
+      "venue_id": 36,
+      "folio": "4",
+      "event_name": "Expo Recrea Escuela para la Vida",
+      "event_date": "2021-11-04",
+      "start_date": "2021-10-02",
+      "end_date": "2021-11-03",
+      "general_message": "La dirección de Educación para la vida lleva a cabo la invitación para la participación de los Centros de Trabajo que se encuentren en el programa en Expo Recrea Escuela para la Vida.",
+      "status": "Activo",
+      "venues": "[{\"type\":\"Presencial\",\"onsite_name\":\"Expo Guadalajara\",\"street\":\"Av. Mariano Otero\",\"references\":\"sq. Av. de Las Rosas\",\"suburb\":\"Verde Valle\",\"cp\":\"44550\",\"town\":\"Guadalajara\",\"virtual_platform\":null,\"link\":null}]"
+    }
+  ]
+}

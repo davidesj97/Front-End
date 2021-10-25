@@ -1,19 +1,23 @@
 <template>
   <div class="header-bar">
     <div class="header d-flex">
+
       <div class="wrap-logo d-flex align-center justify-content-center">
         <img class="recrea-logo" src="../../assets/img/SEJ enventos_logo recrea.svg" alt="">
       </div>
+
       <div class="wrap-user d-flex align-items-center justify-content-end">
-          <div class="d-flex flex-column align-items-end me-3">
-            <span class="fw-bold">Nombre del usuario</span>
-            <span>Administración General</span>
-          </div>
-          <div class="icon-user me-4">
-            <img class="user-image" src="../../assets/img/CRISTIANO.jpg" alt="">
-          </div>
+        <div class="d-flex flex-column align-items-end me-3">
+          <span class="fw-bold">Nombre del usuario</span>
+          <span>Administración General</span>
         </div>
+        <div class="icon-user me-4">
+          <img class="user-image" src="../../assets/img/CRISTIANO.jpg" alt="">
+        </div>
+      </div>
+
     </div>
+
   </div>
 </template>
 

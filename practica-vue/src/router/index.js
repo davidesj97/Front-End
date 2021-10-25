@@ -4,11 +4,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routerOptions = [
-  { path: '/', name: 'Login' },
-  { path: '/eventos', name: 'Eventos' },
-  { path: '/registro-eventos', name: 'RegistroEventos' },
+  { path: '/', name: 'RegistroEventos' },
   { path: '/registro-participantes', name: 'RegistroParticipantes' },
-  { path: '*', redirect: { name: 'Eventos' } }
+  { path: '*', redirect: { name: 'RegistroEventos' } }
 ]
 
 const routes = routerOptions.map(r => {
