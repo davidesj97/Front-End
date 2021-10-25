@@ -1,0 +1,18 @@
+// ---------------------
+// Nutmeg font
+// ---------------------
+
+@font-face {
+  font-family: "Nutmeg";
+  src: url("../fonts/Nutmeg-Regular.eot");
+  src: url("../fonts/Nutmeg-Regular.eot?#eifix") format("embedded-opentype"),
+    url("../fonts/Nutmeg-Regular.ttf") format("truetype"),
+    url("../fonts/Nutmeg-Regular.woff") format("woff"),
+    url("../fonts/Nutmeg-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  font-family: "Nutmeg";
+}
