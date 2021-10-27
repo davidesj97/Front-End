@@ -1,0 +1,13 @@
+{
+  "is_ok": true,
+  "data": [
+    {
+      "user_type_id": 1,
+      "name": "Alumno"
+    },
+    {
+      "user_type_id": 2,
+      "name": "Docente"
+    }
+  ]
+}
