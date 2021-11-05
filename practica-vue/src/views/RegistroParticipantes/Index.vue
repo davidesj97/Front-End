@@ -2,20 +2,16 @@
   <div class="registro-participantes">
     <h2 class="titulo">Registro de eventos</h2>
     <span>Registrate al evento seleccionado</span>
-    <div v-for="registro in participante" :key="registro" class="registro mt-4">
+    <div v-for="(registro, i) in participante" :key="registro" class="registro mt-4">
       <div class="titulo-registro ps-5">
         Registro de otros asistentes
       </div>
-      <div class="formulario-registro mt-4 ps-5 pb-5">
-        <form class="d-flex flex-column">
-          <label for="usuario">Tipo de usuario<span>*</span></label>
-          <select id="usuario" v-model="tipoUsuario">
-            <option v-for="usuario in usuarios.data" :key="usuario.user_type_id" :value="usuario.user_type_id">{{ usuario.name }}</option>
-          </select>
-          <registro-alumnos v-if="tipoUsuario == 1"/>
-          <registro-docentes v-else/>
-        </form>
-      </div>
+        <formulario-registro
+          :id="i+1"
+          :pedir="pedir"
+          @setDatosParticipante="getParticipante "
+          @setValidateFormulario="pedir ? validarFormulario : null"
+        />
     </div>
     <div class="opciones-formulario d-flex justify-content-between">
       <div class="d-flex justify-content-between w-100">
@@ -30,27 +26,32 @@
       </div>
       <div class="cancelar-aceptar d-flex justify-content-between">
         <button class="btn-cancelar" type="button" @click="cancelarRegistro()">Cancelar</button>
-        <button class="btn-registrase" type="button">Registrarse</button>
+        <button class="btn-registrase" type="submit" @click="validarFormulario()">Registrarse</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import RegistroDocentes from './RegistroDocentes/Index'
-import RegistroAlumnos from './RegistroAlumnos/Index'
+import FormularioRegistro from './FormularioRegistro/Index'
 import datos from '../../assets/json/tipoUsuario.json'
+import saveAs from '@/utils/FileServer.js'
 
 export default {
   name: 'RegistroParticipantes',
   components: {
-    RegistroDocentes,
-    RegistroAlumnos
+    FormularioRegistro
   },
   data () {
     return {
-      tipoUsuario: 1,
-      participante: 1
+      validate: [],
+      pedir: false,
+      participante: 1,
+      registro: {
+        event_folio: '',
+        event_name: '',
+        participants: []
+      }
     }
   },
   computed: {
@@ -60,7 +61,43 @@ export default {
   },
   methods: {
     cancelarRegistro () {
-      this.$router.push({ name: 'RegistroEventos' })
+      this.$router.push('/eventos')
+    },
+    getParticipante (participante, id, validate) {
+      for (let i = 0; i < this.participante; i++) {
+        if ((i + 1) === id) {
+          this.validate[i] = validate
+          this.registro.participants[i] = participante
+        }
+      }
+    },
+    validarFormulario () {
+      this.pedir = true
+      const { id, nombre } = this.$route.params
+      this.registro.event_folio = id
+      this.registro.event_name = nombre
+      const values = []
+      for (let i = 0; i < this.participante; i++) {
+        values[i] = Object.values(this.validate[i])
+      }
+      let valido
+      for (let i = 0; i < this.participante; i++) {
+        for (let j = 0; j < values[i].length; j++) {
+          if (values[i][j] === true) {
+            valido = true
+          } else {
+            valido = false
+            break
+          }
+        }
+      }
+      console.log(valido)
+      if (valido) {
+        const datos = JSON.stringify(this.registro)
+        var blob = new Blob([datos], { type: 'text/plain' })
+        saveAs(blob, `RegistroParticipantes${this.registro.event_folio}.json`)
+        this.$router.push('/eventos')
+      }
     }
   }
 }
@@ -123,6 +160,20 @@ export default {
           height: 40px;
         }
       }
+
+      label {
+        margin: 15px 0 0;
+      }
+
+      input {
+        background-color: #FFFFFF;
+        border: 1px solid #D0D0D0;
+        border-radius: 8px;
+        width: 90%;
+        height: 40px;
+        padding-left: 10px;
+        margin: 5px 0 0;
+      }
     }
   }
 
@@ -135,9 +186,9 @@ export default {
       border: 1px solid #E70E4C;
       border-radius: 8px;
       color: #E70E4C;
-      height: 40px;
+      padding: .5rem;
       line-height: 30px;
-      width: 24%;
+      width: 35%;
     }
 
     .btn-eliminar-participante {
@@ -145,9 +196,9 @@ export default {
       border: 1px solid #636668;
       border-radius: 8px;
       color: #636668;
-      height: 40px;
+      padding: 3px;
       line-height: 30px;
-      width: 24%;
+      width: 35%;
     }
 
     .cancelar-aceptar {

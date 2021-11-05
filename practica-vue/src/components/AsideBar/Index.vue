@@ -13,7 +13,6 @@ export default {
 <style lang="scss">
 .aside-bar  {
   width: 14.58%;
-  height: calc(100vh - 88px);
-  border-right: 1px solid black;
+  border-right: 1px solid #00000029;
 }
 </style>

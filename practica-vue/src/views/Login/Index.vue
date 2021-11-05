@@ -14,7 +14,7 @@
           <input type="password" class="form-control mt-4" placeholder="Contraseña" required/>
           <div class="d-flex justify-content-between mt-5">
             <a href="/">¿Olvidaste tu contraseña?</a>
-            <button type="submit" class="btn btn-warning">Entrar</button>
+            <button type="submit" class="btn btn-warning" @submit.prevent="onSubmit()">Entrar</button>
           </div>
         </form>
       </div>
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     onSubmit () {
-      this.$emit('is-login')
+      this.$router.push('/eventos')
     }
   }
 }

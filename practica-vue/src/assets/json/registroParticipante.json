@@ -1,0 +1,65 @@
+[
+  {
+    "event_folio": 1,
+    "event_name": "Expo Recrea Escuela para la Vida",
+    "participants": [
+      {
+        "user_type_id": 1,
+        "curp": "ddfdasdas",
+        "name": "David",
+        "paternal_surname": "Sánchez",
+        "maternal_surname": "De Jesús",
+        "academic_level": "Primaria",
+        "shift": "Matutino",
+        "tutors": {
+          "tutor_name": "Luis",
+          "relationship": "Padre",
+          "email": null,
+          "phone_number": "0000000000"
+        },
+        "email": null,
+        "phone_number": null
+      }
+    ]
+  },
+  {
+    "event_folio": 2,
+    "event_name": "Expo Recrea Escuela para la Vida",
+    "participants": [
+      {
+        "user_type_id": 2,
+        "curp": "ddfdasdas",
+        "name": "David",
+        "paternal_surname": "Sánchez",
+        "maternal_surname": "De Jesús",
+        "academic_level": null,
+        "shift": null,
+        "tutors": {
+          "tutor_name": null,
+          "relationship": null,
+          "email": null,
+          "phone_number": null
+        },
+        "email": "jose@hose.com",
+        "phone_number": "1111111111"
+      },
+      {
+        "user_type_id": 2,
+        "curp": "dfas",
+        "name": "Genaro",
+        "paternal_surname": "Lopez",
+        "maternal_surname": "Rodriguez",
+        "academic_level": null,
+        "shift": null,
+        "tutors": {
+          "tutor_name": null,
+          "relationship": null,
+          "email": null,
+          "phone_number": null
+        },
+        "email": "genaro@mail.com",
+        "phone_number": "0000000000"
+      }
+    ]
+  }
+]
