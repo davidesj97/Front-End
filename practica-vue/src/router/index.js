@@ -22,6 +22,11 @@ const routes = [
         path: '/evento/:id',
         name: 'RegistroParticipantes',
         component: () => import('../views/RegistroParticipantes/Index.vue')
+      },
+      {
+        path: '/evento/:id/participantes',
+        name: 'VerParticipantes',
+        component: () => import('../views/VerParticipantes/Index.vue')
       }
     ]
   }

@@ -6,7 +6,7 @@
         <div class="d-flex justify-content-end">
           <span @click="mostrarOpciones(i)" class="btn-opciones">...</span>
           <div v-if="opciones == i" class="opciones-evento mt-2">
-            <div class="opcion-evento ps-4">
+            <div @click="verParticipantes(evento.event_id)" class="opcion-evento ps-4">
               <img class="icon" src="../../../assets/img/icon/users.svg" alt=""> ver participantes
             </div>
             <div class="opcion-evento ps-4">
@@ -108,7 +108,55 @@ export default {
     },
     registrarse (id, nombre) {
       this.$router.push({ name: 'RegistroParticipantes', params: { id, nombre } })
+    },
+    verParticipantes (id) {
+      this.$router.push({ name: 'VerParticipantes', params: { id } })
     }
   }
 }
 </script>
+
+<style lang="scss">
+.card {
+    width: 504px;
+    border-radius: 10px;
+
+    .card-header {
+      height: 72px;
+      max-height: 72px;
+      font-size: 16px;
+
+      .btn-opciones {
+        font-size: 35px;
+        margin-top: -35px;
+        color: #E70E4C;
+      }
+      .btn-opciones:hover {
+        cursor: pointer;
+      }
+
+      .opciones-evento {
+        position: absolute;
+        background-color: #ffffff;
+        width: 208px;
+        height: 192px;
+        border-radius: 2px;
+        box-shadow: 0px 3px 6px #00000029;
+
+        .opcion-evento {
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
+          font-size: 14px;
+          color: #212529;
+        }
+        .opcion-evento:hover {
+          background-color: #FCE1E9;
+          font-size: 14px;
+          color: #E70E4C;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+</style>

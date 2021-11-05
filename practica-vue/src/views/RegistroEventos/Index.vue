@@ -33,48 +33,6 @@ export default {
     font-size: 16px;
   }
 
-  .card {
-    width: 504px;
-    border-radius: 10px;
-
-    .card-header {
-      height: 72px;
-      max-height: 72px;
-      font-size: 16px;
-
-      .btn-opciones {
-        font-size: 35px;
-        margin-top: -35px;
-        color: #E70E4C;
-      }
-      .btn-opciones:hover {
-        cursor: pointer;
-      }
-
-      .opciones-evento {
-        position: absolute;
-        background-color: #ffffff;
-        width: 208px;
-        height: 192px;
-        border-radius: 2px;
-        box-shadow: 0px 3px 6px #00000029;
-
-        .opcion-evento {
-          width: 100%;
-          height: 48px;
-          line-height: 48px;
-          font-size: 14px;
-          color: #212529;
-        }
-        .opcion-evento:hover {
-          background-color: #FCE1E9;
-          font-size: 14px;
-          color: #E70E4C;
-        }
-      }
-    }
-  }
-
   .list-cards {
     list-style: none;
     margin: 0;
