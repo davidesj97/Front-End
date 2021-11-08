@@ -1,0 +1,40 @@
+{
+  "event_folio": 2,
+  "event_name": "Expo Recrea Escuela para la Vida",
+  "participants": [
+    {
+      "user_type_id": 1,
+      "curp": "ddfdasdas",
+      "name": "David",
+      "paternal_surname": "Sánchez",
+      "maternal_surname": "De Jesús",
+      "academic_level": "Primaria",
+      "shift": "Matutino",
+      "tutors": {
+        "tutor_name": "Luis",
+        "relationship": "Padre",
+        "email": null,
+        "phone_number": "0000000000"
+      },
+      "email": null,
+      "phone_number": null
+    },
+    {
+      "user_type_id": 2,
+      "curp": "dddd",
+      "name": "Enrique",
+      "paternal_surname": "Perez",
+      "maternal_surname": "Duran",
+      "academic_level": null,
+      "shift": null,
+      "tutors": {
+        "tutor_name": null,
+        "relationship": null,
+        "email": null,
+        "phone_number": null
+      },
+      "email": "enrique_duran@duran.tec.com",
+      "phone_number": "0123456789"
+    }
+  ]
+}

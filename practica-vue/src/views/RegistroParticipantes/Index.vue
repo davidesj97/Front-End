@@ -10,7 +10,6 @@
           :id="i+1"
           :pedir="pedir"
           @setDatosParticipante="getParticipante "
-          @setValidateFormulario="pedir ? validarFormulario : null"
         />
     </div>
     <div class="opciones-formulario d-flex justify-content-between">
@@ -66,6 +65,7 @@ export default {
     getParticipante (participante, id, validate) {
       for (let i = 0; i < this.participante; i++) {
         if ((i + 1) === id) {
+          this.validate[i] = null
           this.validate[i] = validate
           this.registro.participants[i] = participante
         }
@@ -135,46 +135,6 @@ export default {
       line-height: 48px;
       border-radius: 10px 10px 0 0;
     }
-
-    .formulario-registro {
-      label{
-        color: #636668;
-        font-size: 14px;
-
-        span {
-          color: #E70E4C;
-        }
-      }
-
-      #usuario {
-        background-color: #FFFFFF;
-        border: 1px solid #D0D0D0;
-        border-radius: 8px;
-        width: 45%;
-        height: 40px;
-        padding-left: 10px;
-
-        option {
-          font-size: 14px;
-          color: #212529;
-          height: 40px;
-        }
-      }
-
-      label {
-        margin: 15px 0 0;
-      }
-
-      input {
-        background-color: #FFFFFF;
-        border: 1px solid #D0D0D0;
-        border-radius: 8px;
-        width: 90%;
-        height: 40px;
-        padding-left: 10px;
-        margin: 5px 0 0;
-      }
-    }
   }
 
   .opciones-formulario {
@@ -202,7 +162,7 @@ export default {
     }
 
     .cancelar-aceptar {
-      width: 30%;
+      width: 40%;
 
       .btn-cancelar {
         background-color: #FFFFFF;
@@ -210,7 +170,7 @@ export default {
         border-radius: 8px;
         height: 40px;
         color: #636668;
-        width: 40%;
+        width: 42%;
       }
 
       .btn-registrase {
@@ -219,7 +179,7 @@ export default {
         border-radius: 8px;
         height: 40px;
         color: #FFFFFF;
-        width: 45%;
+        width: 50%;
       }
     }
   }

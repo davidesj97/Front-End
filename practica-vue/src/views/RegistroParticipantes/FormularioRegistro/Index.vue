@@ -12,7 +12,7 @@
         </option>
       </select>
       <div class="d-flex flex-wrap">
-        <div class="d-flex flex-column w-50">
+        <div class="fields d-flex flex-column">
           <label for="curp">CURP <span>*</span></label>
           <input
             id="curp"
@@ -20,8 +20,11 @@
             :style="this.validate.validateCurp || !pedir ? null : border"
             v-model="participant.curp"
           >
+          <div v-if="pedir && !this.validate.validateCurp" style="color: red">
+            Campo obligatorio
+          </div>
         </div>
-        <div class="d-flex flex-column w-50">
+        <div class="fields d-flex flex-column">
           <label for="nombre">Nombre <span>*</span></label>
           <input
             id="nombre"
@@ -29,8 +32,11 @@
             type="text"
             v-model="participant.name"
           >
+          <div v-if="pedir && !this.validate.validateName" style="color: red">
+            Campo obligatorio
+          </div>
         </div>
-        <div class="d-flex flex-column w-50">
+        <div class="fields d-flex flex-column">
           <label for="apellido-paterno">Apellido paterno <span>*</span></label>
           <input
             id="apellido-paterno"
@@ -38,8 +44,11 @@
             type="text"
             v-model="participant.paternal_surname"
           >
+          <div v-if="pedir && !this.validate.validatePaternalSurname" style="color: red">
+            Campo obligatorio
+          </div>
         </div>
-        <div class="d-flex flex-column w-50">
+        <div class="fields d-flex flex-column">
           <label for="apellido-materno">Apellido materno <span>*</span></label>
           <input
             id="apellido-materno"
@@ -47,6 +56,9 @@
             type="text"
             v-model="participant.maternal_surname"
           >
+          <div v-if="pedir && !this.validate.validateMaternalSurname" style="color: red">
+            Campo obligatorio
+          </div>
         </div>
       </div>
     </form>
@@ -117,7 +129,8 @@ export default {
   methods: {
     getDatosAlumno (
       academicLevel,
-      shift, tutors,
+      shift,
+      tutors,
       validateAcademicLevel,
       validateShift,
       validateTutorName,
@@ -135,11 +148,24 @@ export default {
       this.validate.validateEmail = validateEmail
       this.validate.validatePhoneNumber = validatePhoneNumber
     },
-    getDatosDocentes (email, validateEmail, phoneNumber, validatePhoneNumber) {
+    getDatosDocentes (
+      email,
+      phoneNumber,
+      validateEmail,
+      validatePhoneNumber,
+      validateAcademicLevel,
+      validateShift,
+      validateTutorName,
+      validateRelationship
+    ) {
       this.participant.email = email
       this.participant.phone_number = phoneNumber
       this.validate.validateEmail = validateEmail
       this.validate.validatePhoneNumber = validatePhoneNumber
+      this.validate.validateAcademicLevel = validateAcademicLevel
+      this.validate.validateShift = validateShift
+      this.validate.validateTutorName = validateTutorName
+      this.validate.validateRelationship = validateRelationship
     },
     setParticipante () {
       this.$emit('setDatosParticipante', this.participant, this.id, this.validate)
@@ -165,8 +191,6 @@ export default {
       } else {
         this.validate.validateMaternalSurname = true
       }
-
-      this.$emit('setValidateFormulario', this.validate, this.id)
     }
   }
 
@@ -174,17 +198,56 @@ export default {
 </script>
 
 <style lang="scss">
-label {
-  margin: 15px 0 0;
+.formulario-registro {
+  label{
+    color: #636668;
+    font-size: 14px;
+
+    span {
+      color: #E70E4C;
+    }
+  }
+
+  #usuario {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+    width: 45%;
+    height: 40px;
+    padding-left: 10px;
+
+    option {
+      font-size: 14px;
+      color: #212529;
+      height: 40px;
+    }
+  }
+
+  .fields {
+    width: 50%;
+
+    label {
+      margin: 15px 0 0;
+    }
+    input {
+      background-color: #FFFFFF;
+      border: 1px solid #D0D0D0;
+      border-radius: 8px;
+      width: 90%;
+      height: 40px;
+      padding-left: 10px;
+      margin: 5px 0 0;
+    }
+  }
 }
 
-input {
-  background-color: #FFFFFF;
-  border: 1px solid #D0D0D0;
-  border-radius: 8px;
-  width: 90%;
-  height: 40px;
-  padding-left: 10px;
-  margin: 5px 0 0;
+@media (max-width: 1200px) {
+
+.formulario-registro {
+  .fields {
+    width: 100%;
+  }
+}
+
 }
 </style>

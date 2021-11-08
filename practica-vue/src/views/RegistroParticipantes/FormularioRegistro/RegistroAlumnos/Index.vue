@@ -1,9 +1,10 @@
 <template>
   <div v-on="setAlumno()" class="formulario-alumnos d-flex flex-wrap">
-    <div class="d-flex flex-column w-50">
+    <div class="fields d-flex flex-column">
       <label for="nivel-academico">Nivel académico <span>*</span></label>
       <select
         id="nivel-academico"
+        class="fields"
         :style="this.validateAcademicLevel || !pedir ? null : border"
         v-model="nivelAcademico"
       >
@@ -12,32 +13,50 @@
           {{ grado.name }}
         </option>
       </select>
+      <div v-if="pedir && !this.validateAcademicLevel " style="color: red">
+        Seleccione una opción válida
+      </div>
     </div>
-    <div class="d-flex flex-column w-50">
+    <div class="fields d-flex flex-column">
       <label for="turno">Turno <span>*</span></label>
       <input id="turno" :style="this.validateShift || !pedir ? null : border" type="text" v-model="shift" />
+      <div v-if="pedir && !this.validateShift " style="color: red">
+        Campo obligatorio
+      </div>
     </div>
     <p class="mt-4 mb-0 fs-4">
       En caso de ir acompañado, los datos del padre, madre o tutor que acompaña al participante:
     </p>
-    <div class="d-flex flex-column w-50">
+    <div class="fields d-flex flex-column">
       <label for="nombre-acompañante">Nombre del padre,madre o tutor <span>*</span></label>
       <input id="nombre-acompañante" :style="this.validateTutorName || !pedir ? null : border" type="text" v-model="tutors.tutor_name">
+      <div v-if="pedir && !this.validateTutorName" style="color: red">
+        Campo obligatorio
+      </div>
     </div>
-    <div class="d-flex flex-column w-50">
+    <div class="fields d-flex flex-column">
       <label for="parentesco">Parentesco <span>*</span></label>
       <select id="parentesco" :style="this.validateRelationship || !pedir ? null : border" v-model="tutors.relationship">
         <option :value="null">Seleciona el parentesco</option>
         <option v-for="parentesco in parentescos" :key="parentesco" :value="parentesco">{{ parentesco }}</option>
       </select>
+      <div v-if="pedir && !this.validateRelationship" style="color: red">
+        Seleccione una opción válida
+      </div>
     </div>
-    <div class="d-flex flex-column w-50">
+    <div class="fields d-flex flex-column">
       <label for="correo-acompañante">Correo electrónico</label>
       <input id="correo-acompañante" :style="this.validateTutorEmail || !pedir ? null : border " type="email" v-model="tutors.email">
+      <div v-if="pedir && !this.validateTutorEmail " style="color: red">
+        Ingrese un correo electrónico valido
+      </div>
     </div>
-    <div class="d-flex flex-column w-50">
+    <div class="fields d-flex flex-column">
       <label for="telefono-acompañante">Teléfono <span>*</span></label>
       <input id="telefono-acompañante" :style="this.validateTutorPhoneNumber || !pedir ? null : border" type="text" v-model="tutors.phone_number">
+      <div v-if="pedir && !this.validateTutorPhoneNumber " style="color: red">
+        Ingrese un número de teléfono valido
+      </div>
     </div>
   </div>
 </template>
@@ -143,14 +162,32 @@ export default {
 <style lang="scss">
 .formulario-alumnos {
 
-  select {
-    background-color: #FFFFFF;
-    border: 1px solid #D0D0D0;
-    border-radius: 8px;
-    width: 90%;
-    height: 40px;
-    padding-left: 10px;
-    margin: 5px 0 0;
+  .fields {
+    width: 50%;
+
+    label{
+      margin: 15px 0 0;
+    }
+
+    select {
+      background-color: #FFFFFF;
+      border: 1px solid #D0D0D0;
+      border-radius: 8px;
+      width: 90%;
+      height: 40px;
+      padding-left: 10px;
+      margin: 5px 0 0;
+    }
   }
+}
+
+@media (max-width: 1200px) {
+
+.formulario-alumnos {
+  .fields {
+    width: 100%;
+  }
+}
+
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="eventos d-flex flex-wrap">
-    <div v-for="(evento, i) in eventos.data" :key="evento.event_id" class="card mt-4 me-4">
+  <div class="eventos d-flex flex-wrap justify-content-between">
+    <div v-for="(evento, i) in eventos.data" :key="evento.event_id" class="card mt-4">
       <div class="card-header d-flex align-items-center justify-content-between">
         <div>{{ evento.event_name }}</div>
         <div class="d-flex justify-content-end">
@@ -117,7 +117,8 @@ export default {
 </script>
 
 <style lang="scss">
-.card {
+@media (min-width: 1200px) {
+  .card {
     width: 504px;
     border-radius: 10px;
 
@@ -159,4 +160,5 @@ export default {
       }
     }
   }
+}
 </style>

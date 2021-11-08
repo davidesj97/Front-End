@@ -11,7 +11,7 @@
     </div>
     <div class="input-group search-participante mt-4">
       <img class="icon" src="../../assets/img/icon/search.svg" alt="">
-      <input type="search" class="search-input" placeholder="Buscar participante">
+      <input type="search" class="search-input" placeholder="Buscar participante" v-model="participant">
     </div>
     <table class="table mt-4">
       <tr class="table-head">
@@ -34,7 +34,8 @@ export default {
   name: 'VerParticipantes',
   data () {
     return {
-      listaParticipantes: null
+      listaParticipantes: null,
+      participant: null
     }
   },
   computed: {
@@ -73,7 +74,7 @@ export default {
   }
 
   .options {
-    width: 25%;
+    width: 30%;
 
     .btn-regresar {
       background-color: transparent;
@@ -88,7 +89,7 @@ export default {
       color: #FFFFFF;
       font-size: 14px;
       height: 40px;
-      width: 50%
+      width: 45%
     }
   }
 
@@ -96,16 +97,19 @@ export default {
     height: 40px;
 
     .icon {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 14px;
       border-top: 1px solid #989898;
       border-left: 1px solid #989898;
       border-bottom: 1px solid #989898;
       border-radius: 20px;
       padding: .5rem;
+      height: 100%;
     }
 
     .search-input {
+      font-size: 16px;
+      line-height: 14px;
       border-top: 1px solid #989898;
       border-right: 1px solid #989898;
       border-bottom: 1px solid #989898;
@@ -113,6 +117,7 @@ export default {
       border-radius: 20px;
       padding: .5rem;
       width: 27%;
+      outline: none;
     }
   }
 

@@ -1,0 +1,40 @@
+{
+  "event_folio": 1,
+  "event_name": "Expo Recrea Escuela para la Vida",
+  "participants": [
+    {
+      "user_type_id": 1,
+      "curp": "DES101002HJCNSV04",
+      "name": "David",
+      "paternal_surname": "Sánchez",
+      "maternal_surname": "De Jesús",
+      "academic_level": "Primaria",
+      "shift": "Vespertino",
+      "tutors": {
+        "tutor_name": "Pedro Perez",
+        "relationship": "Hermano",
+        "email": "pedorerez@mail.com",
+        "phone_number": "0123456789"
+      },
+      "email": null,
+      "phone_number": null
+    },
+    {
+      "user_type_id": 2,
+      "curp": "SHJ050268HJCNSV01",
+      "name": "Javier",
+      "paternal_surname": "Sánchez",
+      "maternal_surname": "Higuera",
+      "academic_level": null,
+      "shift": null,
+      "tutors": {
+        "tutor_name": null,
+        "relationship": null,
+        "email": null,
+        "phone_number": null
+      },
+      "email": "javier@mail.com",
+      "phone_number": "0123456789"
+    }
+  ]
+}
