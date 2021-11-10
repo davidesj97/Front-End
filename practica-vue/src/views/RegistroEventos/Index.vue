@@ -19,6 +19,7 @@ export default {
 .registro-eventos {
   padding: 2rem;
   text-align: left;
+  min-height: calc(100vh - 88px);
   width: 85.42%;
 
   .titulo {

@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import Antd from 'ant-design-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
+import 'ant-design-vue/dist/antd.css'
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -16,6 +18,8 @@ library.add(faUser, faSearch)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
+
+Vue.use(Antd)
 
 new Vue({
   router,

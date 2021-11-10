@@ -99,7 +99,6 @@ export default {
     height: 40px;
 
     .icon {
-      font-size: 16px;
       line-height: 14px;
       border-top: 1px solid #989898;
       border-left: 1px solid #989898;
@@ -107,6 +106,7 @@ export default {
       border-radius: 20px;
       padding: .5rem;
       height: 100%;
+      width: 35px;
     }
 
     .search-input {
