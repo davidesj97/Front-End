@@ -33,8 +33,6 @@
 
 <script>
 import FormularioRegistro from './FormularioRegistro/Index'
-import datos from '../../assets/json/tipoUsuario.json'
-import saveAs from '@/utils/FileServer.js'
 
 export default {
   name: 'RegistroParticipantes',
@@ -51,11 +49,6 @@ export default {
         event_name: '',
         participants: []
       }
-    }
-  },
-  computed: {
-    usuarios () {
-      return datos
     }
   },
   methods: {
@@ -91,11 +84,25 @@ export default {
           }
         }
       }
-      console.log(valido)
       if (valido) {
-        const datos = JSON.stringify(this.registro)
-        var blob = new Blob([datos], { type: 'text/plain' })
-        saveAs(blob, `RegistroParticipantes${this.registro.event_folio}.json`)
+        if (localStorage.getItem('RegistroParticipantes')) {
+          const registro = JSON.parse(localStorage.getItem('RegistroParticipantes'))
+          const event = registro.findIndex(element => element.event_folio === Number(id))
+          if (registro[event]) {
+            for (let i = 0; i < this.registro.participants.length; i++) {
+              registro[event].participants.push(this.registro.participants[i])
+            }
+            localStorage.setItem('RegistroParticipantes', JSON.stringify(registro))
+          } else {
+            registro.push(this.registro)
+            localStorage.setItem('RegistroParticipantes', JSON.stringify(registro))
+          }
+        } else {
+          const participant = []
+          participant.push(this.registro)
+          const data = JSON.stringify(participant)
+          localStorage.setItem('RegistroParticipantes', data)
+        }
         this.$router.push('/eventos')
       }
     }

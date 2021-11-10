@@ -11,7 +11,7 @@
     </div>
     <div class="input-group search-participante mt-4">
       <img class="icon" src="../../assets/img/icon/search.svg" alt="">
-      <input type="search" class="search-input" placeholder="Buscar participante" v-model="participant">
+      <input type="search" class="search-input" placeholder="Buscar participante">
     </div>
     <table class="table mt-4">
       <tr class="table-head">
@@ -29,27 +29,29 @@
 </template>
 
 <script>
-import datos from '../../assets/json/registroParticipante.json'
 export default {
   name: 'VerParticipantes',
   data () {
     return {
-      listaParticipantes: null,
-      participant: null
+      listaParticipantes: null
     }
   },
   computed: {
-    participantes () {
-      return datos
+    participants () {
+      const registro = JSON.parse(localStorage.getItem('RegistroParticipantes'))
+      const { id } = this.$route.params
+      const event = registro.findIndex(element => element.event_folio === Number(id))
+      if (registro[event]) {
+        return registro[event]
+      } else {
+        return null
+      }
     }
   },
   methods: {
     obtenerParticipantes () {
-      const { id } = this.$route.params
-      for (let i = 0; i < this.participantes.length; i++) {
-        if (this.participantes[i].event_folio === Number(id)) {
-          this.listaParticipantes = this.participantes[i].participants
-        }
+      if (this.participants) {
+        this.listaParticipantes = this.participants.participants
       }
     },
     backToEvents () {

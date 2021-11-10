@@ -1,5 +1,5 @@
 <template>
-  <div v-on="pedir ? setDocente() : null" class="formulario-docente d-flex flex-wrap">
+  <div v-on="setDocente()" class="formulario-docente d-flex flex-wrap">
     <div class="fields d-flex flex-column">
       <label for="correo-institucional">Correo institucional<span>*</span></label>
       <input id="correo-institucional"
