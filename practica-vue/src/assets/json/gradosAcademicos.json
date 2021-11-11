@@ -1,0 +1,21 @@
+{
+  "is_ok": true,
+  "data": [
+    {
+      "academic_degree_id": 1,
+      "name": "Preescolar"
+    },
+    {
+      "academic_degree_id": 2,
+      "name": "Primaria"
+    },
+    {
+      "academic_degree_id": 3,
+      "name": "Secundaria"
+    },
+    {
+      "academic_degree_id": 4,
+      "name": "Especial"
+    }
+  ]
+}

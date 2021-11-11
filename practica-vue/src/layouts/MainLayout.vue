@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-layout">
     <header-bar />
     <div class="d-flex">
       <aside-bar />

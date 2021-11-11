@@ -9,14 +9,29 @@
         <img class="SEJ-recrea-gris" src="../../assets/img/SEJ enventos_logo recrea_gris.svg" alt="">
         <h1 class="title fs-2 fw-bold">¡Bienvenido a tus eventos!</h1>
         <p>Podras ingresar utilizando tu correo electrónico institucional y contraseña.</p>
-        <form @submit.prevent="onSubmit()">
-          <input type="text" class="form-control mt-4" placeholder="Correo electrónico" required/>
-          <input type="password" class="form-control mt-4" placeholder="Contraseña" required/>
-          <div class="d-flex justify-content-between mt-5">
+        <a-form-model
+          ref="loginForm"
+          :model="user"
+          :rules="rules"
+          @submit="onSubmit()"
+          @submit.native.prevent
+        >
+          <a-form-model-item ref="email" prop="email">
+            <a-input
+              class="login-input"
+              v-model="user.email"
+              type="email"
+              placeholder="Correo electrónico"
+            />
+          </a-form-model-item>
+          <a-form-model-item>
+            <a-input class="login-input" v-model="user.password" type="password" placeholder="contraseña" />
+          </a-form-model-item>
+          <a-form-model-item>
             <a href="/">¿Olvidaste tu contraseña?</a>
-            <button type="submit" class="btn btn-warning">Entrar</button>
-          </div>
-        </form>
+            <a-button class="btn" type="primary" html-type="submit">Entrar</a-button>
+          </a-form-model-item>
+        </a-form-model>
       </div>
     </div>
   </div>
@@ -27,12 +42,28 @@ export default {
   name: 'login',
   data () {
     return {
-      isLogin: false
+      user: {
+        email: '',
+        password: ''
+      },
+      rules: {
+        email: [
+          { required: true, message: 'Ingrse su correo electrónico', trigger: 'blur' }
+        ]
+      },
+      // eslint-disable-next-line no-useless-escape
+      regexp: "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
     }
   },
   methods: {
     onSubmit () {
-      this.$emit('is-login')
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.$router.push('/eventos')
+        } else {
+          return false
+        }
+      })
     }
   }
 }
@@ -50,7 +81,7 @@ export default {
     background-color: #ffffff;
     border-radius: 20px;
     border: 1px solid #ebebeb;
-    height: 40rem;
+    height: 39rem;
 
     .login-img{
       background-image: url('../../assets/img/SEJ eventos_login_right.jpg');
@@ -63,14 +94,21 @@ export default {
     .login-form {
       padding: 0 6rem;
 
+      .login-input {
+        height: 40px;
+        font-size: 16px;
+      }
+
       a {
         color: #E70E4C;
       }
 
       .btn {
-        width: 8rem;
-        border-radius: 5px;
         background-color: #FEC12D;
+        border: none;
+        border-radius: 5px;
+        color: #000000;
+        width: 8rem;
       }
     }
 
